@@ -2,10 +2,10 @@
 
 <table>
   <tr>
-    <td>Name</td>
-    <td>Age</td>
-    <td>Cuteness</td>
-    <td>Softness</td>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Cuteness</th>
+    <th>Softness</th>
   </tr>
 
   <tr>
@@ -18,3 +18,4 @@
 
 <%= link_to 'Edit', edit_kitten_path(@kitten) %> |
 <%= link_to 'Back', kittens_path %>
+<%= link_to 'Destroy', kitten, method: :delete, data: { confirm: 'Are you sure?' } %>
