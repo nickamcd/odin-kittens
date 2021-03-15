@@ -4,10 +4,21 @@ class KittensController < ApplicationController
   # GET /kittens or /kittens.json
   def index
     @kittens = Kitten.all
+
+    respond_to do |format|
+      format.html
+      format.json { render :json => @kittens }
+    end
   end
 
   # GET /kittens/1 or /kittens/1.json
   def show
+    @kitten = Kitten.find(params[:id]) 
+
+    respond_to do |format|
+      format.html
+      format.json { render :json => @kitten }
+    end
   end
 
   # GET /kittens/new
@@ -17,6 +28,7 @@ class KittensController < ApplicationController
 
   # GET /kittens/1/edit
   def edit
+    @kitten = Kitten.find(params[:id])
   end
 
   # POST /kittens or /kittens.json
